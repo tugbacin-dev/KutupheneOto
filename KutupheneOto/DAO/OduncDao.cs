@@ -1,0 +1,56 @@
+﻿using MySql.Data.MySqlClient;
+using KutupheneOto.Domain;
+using System;
+using System.Collections.Generic;
+
+namespace KutupheneOto.DAO
+{
+    public class OduncDao
+    {
+        public void OduncKaydet(Odunc odunc)
+        {
+            using (MySqlConnection baglanti = Veritabani.BaglantiAl())
+            {
+                string sorgu = "INSERT INTO odunc_islemleri (kitap_id, uye_id, verilis_tarihi, teslim_tarihi, iade_durumu) " +
+                               "VALUES (@kId, @uId, @vTarih, @tTarih, @durum)";
+
+                MySqlCommand komut = new MySqlCommand(sorgu, baglanti);
+                komut.Parameters.AddWithValue("@kId", odunc.KitapId);
+                komut.Parameters.AddWithValue("@uId", odunc.UyeId);
+                komut.Parameters.AddWithValue("@vTarih", odunc.VerilisTarihi);
+                komut.Parameters.AddWithValue("@tTarih", odunc.IadeTarihi);
+                komut.Parameters.AddWithValue("@durum", odunc.IadeEdildiMi);
+
+                baglanti.Open();
+                komut.ExecuteNonQuery();
+            }
+        }
+
+        public List<Odunc> TumunuGetir()
+        {
+            List<Odunc> liste = new List<Odunc>();
+            using (MySqlConnection baglanti = Veritabani.BaglantiAl())
+            {
+                string sorgu = "SELECT * FROM odunc_islemleri";
+                MySqlCommand komut = new MySqlCommand(sorgu, baglanti);
+
+                baglanti.Open();
+                using (MySqlDataReader oku = komut.ExecuteReader())
+                {
+                    while (oku.Read())
+                    {
+                        Odunc o = new Odunc();
+                        o.Id = Convert.ToInt32(oku["id"]);
+                        o.KitapId = Convert.ToInt32(oku["kitap_id"]);
+                        o.UyeId = Convert.ToInt32(oku["uye_id"]);
+                        o.VerilisTarihi = Convert.ToDateTime(oku["verilis_tarihi"]);
+                        o.IadeTarihi = Convert.ToDateTime(oku["teslim_tarihi"]);
+                        o.IadeEdildiMi = Convert.ToBoolean(oku["iade_durumu"]);
+                        liste.Add(o);
+                    }
+                }
+            }
+            return liste;
+        }
+    }
+}
