@@ -26,14 +26,34 @@ namespace KutupheneOto.DAO
             }
         }
 
+     
+        public void IadeOnayla(int id)
+        {
+            using (MySqlConnection baglanti = Veritabani.BaglantiAl())
+            {
+              
+                string sorgu = "UPDATE odunc_islemleri SET iade_durumu = 1, teslim_tarihi = @bugun WHERE id = @id";
+
+                MySqlCommand komut = new MySqlCommand(sorgu, baglanti);
+                komut.Parameters.AddWithValue("@bugun", DateTime.Now);
+                komut.Parameters.AddWithValue("@id", id);
+
+                baglanti.Open();
+                komut.ExecuteNonQuery();
+            }
+        }
+
         public List<Odunc> TumunuGetir()
         {
             List<Odunc> liste = new List<Odunc>();
             using (MySqlConnection baglanti = Veritabani.BaglantiAl())
             {
-                string sorgu = "SELECT * FROM odunc_islemleri";
-                MySqlCommand komut = new MySqlCommand(sorgu, baglanti);
+                string sorgu = @"SELECT o.*, k.kitap_ad, u.ad 
+                         FROM odunc_islemleri o
+                         INNER JOIN kitaplar k ON o.kitap_id = k.id
+                         INNER JOIN uyeler u ON o.uye_id = u.id";
 
+                MySqlCommand komut = new MySqlCommand(sorgu, baglanti);
                 baglanti.Open();
                 using (MySqlDataReader oku = komut.ExecuteReader())
                 {
@@ -44,8 +64,16 @@ namespace KutupheneOto.DAO
                         o.KitapId = Convert.ToInt32(oku["kitap_id"]);
                         o.UyeId = Convert.ToInt32(oku["uye_id"]);
                         o.VerilisTarihi = Convert.ToDateTime(oku["verilis_tarihi"]);
-                        o.IadeTarihi = Convert.ToDateTime(oku["teslim_tarihi"]);
+
+                        if (oku["teslim_tarihi"] != DBNull.Value)
+                        {
+                            o.IadeTarihi = Convert.ToDateTime(oku["teslim_tarihi"]);
+                        }
+
                         o.IadeEdildiMi = Convert.ToBoolean(oku["iade_durumu"]);
+                        o.KitapAd = oku["kitap_ad"].ToString();
+                        o.UyeAd = oku["ad"].ToString();
+
                         liste.Add(o);
                     }
                 }

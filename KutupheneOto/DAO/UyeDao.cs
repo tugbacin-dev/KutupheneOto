@@ -7,6 +7,36 @@ namespace KutupheneOto.DAO
 {
     public class UyeDao
     {
+        public void UyeSil(int id)
+        {
+            using (MySqlConnection baglanti = Veritabani.BaglantiAl())
+            {
+                baglanti.Open();
+                MySqlCommand komut = new MySqlCommand("DELETE FROM uyeler WHERE id=@p1", baglanti);
+                komut.Parameters.AddWithValue("@p1", id);
+                komut.ExecuteNonQuery();
+                baglanti.Close();
+            }
+        }
+
+        public void UyeGuncelle(Uye u)
+        {
+            using (MySqlConnection baglanti = Veritabani.BaglantiAl())
+            {
+                baglanti.Open();
+                string sorgu = "UPDATE uyeler SET ad=@p1, soyad=@p2, telefon=@p3, eposta=@p4 WHERE id=@p5";
+                MySqlCommand komut = new MySqlCommand(sorgu, baglanti);
+
+                komut.Parameters.AddWithValue("@p1", u.Ad);
+                komut.Parameters.AddWithValue("@p2", u.Soyad);
+                komut.Parameters.AddWithValue("@p3", u.Telefon);
+                komut.Parameters.AddWithValue("@p4", u.Eposta);
+                komut.Parameters.AddWithValue("@p5", u.Id);
+
+                komut.ExecuteNonQuery();
+                baglanti.Close();
+            }
+        }
         public void Ekle(Uye uye)
         {
             using (MySqlConnection baglanti = Veritabani.BaglantiAl())

@@ -2,11 +2,41 @@
 using KutupheneOto.Domain;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 
 namespace KutupheneOto.DAO
 {
     public class KitapDao
     {
+        public void KitapGuncelle(Kitap k)
+        {
+            using (MySqlConnection baglanti = Veritabani.BaglantiAl())
+            {
+                baglanti.Open();
+                
+                MySqlCommand komut = new MySqlCommand("UPDATE kitaplar SET kitap_ad=@p1, yazar=@p2, sayfa_sayisi=@p3, stok_adedi=@p4 WHERE id=@p5", baglanti);
+
+                komut.Parameters.AddWithValue("@p1", k.KitapAd);
+                komut.Parameters.AddWithValue("@p2", k.Yazar);
+                komut.Parameters.AddWithValue("@p3", k.SayfaSayisi);
+                komut.Parameters.AddWithValue("@p4", k.StokAdedi);
+                komut.Parameters.AddWithValue("@p5", k.Id);
+
+                komut.ExecuteNonQuery();
+                baglanti.Close();
+            }
+        }
+        public void KitapSil(int id)
+        {
+            using (MySqlConnection baglanti = Veritabani.BaglantiAl())
+            {
+                baglanti.Open();
+                MySqlCommand komut = new MySqlCommand("DELETE FROM kitaplar WHERE Id=@p1", baglanti);
+                komut.Parameters.AddWithValue("@p1", id);
+                komut.ExecuteNonQuery();
+                baglanti.Close();
+            }
+        }
         public void Ekle(Kitap kitap)
         {
             using (MySqlConnection baglanti = Veritabani.BaglantiAl())

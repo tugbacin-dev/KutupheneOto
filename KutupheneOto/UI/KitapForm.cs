@@ -14,6 +14,13 @@ namespace KutupheneOto.UI
 {
     public partial class KitapForm : Form
     {
+        private string kullaniciYetki;
+        public KitapForm(string yetki)
+        {
+            InitializeComponent();
+            this.kullaniciYetki = yetki;
+        }
+
         KitapService _servis = new KitapService();
         public KitapForm()
         {
@@ -54,5 +61,58 @@ namespace KutupheneOto.UI
             dgvKitaplar.DataSource = null;
             dgvKitaplar.DataSource = _servis.KitaplariGetir();
         }
+
+        private void btnKitapSil_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int seciliId = int.Parse(dgvKitaplar.CurrentRow.Cells["Id"].Value.ToString());
+
+                DialogResult onay = MessageBox.Show("Bu kitabı silmek istediğinize emin misiniz?", "Silme Onayı", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (onay == DialogResult.Yes)
+                {
+                    _servis.KitapSil(seciliId);
+
+                    MessageBox.Show("Kitap başarıyla silindi!");
+                    Listele();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lütfen silmek istediğiniz kitabı tablodan seçin! Hata: " + ex.Message);
+            }
+        }
+
+        private void btnKitapGuncelle_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Kitap k = new Kitap();
+                k.Id = int.Parse(dgvKitaplar.CurrentRow.Cells["Id"].Value.ToString());
+                k.KitapAd = txtKitapAd.Text.Trim();
+                k.Yazar = txtYazar.Text.Trim();
+                k.SayfaSayisi = int.Parse(txtSayfa.Text);
+                k.StokAdedi = int.Parse(txtStok.Text);
+
+                _servis.KitapGuncelle(k);
+                MessageBox.Show("Kitap bilgileri güncellendi!");
+                Listele();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hata: " + ex.Message);
+            }
+        }
+
+        private void dgvKitaplar_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtKitapAd.Text = dgvKitaplar.CurrentRow.Cells[1].Value.ToString();
+            txtYazar.Text = dgvKitaplar.CurrentRow.Cells[2].Value.ToString();
+            txtSayfa.Text = dgvKitaplar.CurrentRow.Cells[3].Value.ToString();
+            txtStok.Text = dgvKitaplar.CurrentRow.Cells[4].Value.ToString();
+        }
+
     }
+    
 }
