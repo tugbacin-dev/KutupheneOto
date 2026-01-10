@@ -61,5 +61,11 @@ namespace KutupheneOto.UI
             base.OnFormClosing(e);
             Application.Exit();
         }
+
+        private void rAPORLARToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmRaporlar frm = new FrmRaporlar();
+            frm.ShowDialog();
+        }
     }
 }

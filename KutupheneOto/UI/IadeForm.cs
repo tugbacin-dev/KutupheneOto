@@ -3,6 +3,7 @@ using KutupheneOto.Services;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -23,7 +24,7 @@ namespace KutupheneOto.UI
 
         private void IadeForm_Load(object sender, EventArgs e)
         {
-            ListeyiYenile();
+           ListeyiYenile();
             dgvIadeEdilecekler.Columns["Id"].Visible = false;
             dgvIadeEdilecekler.Columns["KitapId"].Visible = false;
             dgvIadeEdilecekler.Columns["UyeId"].Visible = false;
@@ -140,6 +141,11 @@ namespace KutupheneOto.UI
             {
                 MessageBox.Show("Lütfen listeden iade edilecek bir kayıt seçin!");
             }
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

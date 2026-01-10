@@ -37,9 +37,9 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(-125, -6);
+            this.pictureBox1.Location = new System.Drawing.Point(-155, -5);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(888, 488);
+            this.pictureBox1.Size = new System.Drawing.Size(922, 488);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -47,14 +47,14 @@
             // 
             // txtKullanici
             // 
-            this.txtKullanici.Location = new System.Drawing.Point(468, 239);
+            this.txtKullanici.Location = new System.Drawing.Point(301, 223);
             this.txtKullanici.Name = "txtKullanici";
             this.txtKullanici.Size = new System.Drawing.Size(137, 22);
             this.txtKullanici.TabIndex = 1;
             // 
             // txtSifre
             // 
-            this.txtSifre.Location = new System.Drawing.Point(468, 280);
+            this.txtSifre.Location = new System.Drawing.Point(301, 268);
             this.txtSifre.Name = "txtSifre";
             this.txtSifre.Size = new System.Drawing.Size(137, 22);
             this.txtSifre.TabIndex = 2;
@@ -63,8 +63,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.BurlyWood;
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(354, 245);
+            this.label1.Location = new System.Drawing.Point(202, 229);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(79, 16);
             this.label1.TabIndex = 3;
@@ -73,8 +74,9 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.BurlyWood;
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(354, 286);
+            this.label2.Location = new System.Drawing.Point(202, 274);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(79, 16);
             this.label2.TabIndex = 4;
@@ -82,10 +84,10 @@
             // 
             // btnGiris
             // 
-            this.btnGiris.BackColor = System.Drawing.Color.White;
+            this.btnGiris.BackColor = System.Drawing.Color.BurlyWood;
             this.btnGiris.Enabled = false;
             this.btnGiris.ForeColor = System.Drawing.Color.Black;
-            this.btnGiris.Location = new System.Drawing.Point(502, 330);
+            this.btnGiris.Location = new System.Drawing.Point(301, 309);
             this.btnGiris.Name = "btnGiris";
             this.btnGiris.Size = new System.Drawing.Size(75, 23);
             this.btnGiris.TabIndex = 5;

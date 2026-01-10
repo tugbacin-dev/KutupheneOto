@@ -36,7 +36,6 @@
             this.txtSoyad = new System.Windows.Forms.TextBox();
             this.txtEposta = new System.Windows.Forms.TextBox();
             this.txtTelefon = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnUyeKaydet = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.dgvUyeler = new System.Windows.Forms.DataGridView();
@@ -50,7 +49,7 @@
             // 
             // txtAd
             // 
-            this.txtAd.Location = new System.Drawing.Point(390, 74);
+            this.txtAd.Location = new System.Drawing.Point(390, 77);
             this.txtAd.Name = "txtAd";
             this.txtAd.Size = new System.Drawing.Size(100, 22);
             this.txtAd.TabIndex = 0;
@@ -58,6 +57,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.BurlyWood;
             this.label1.Location = new System.Drawing.Point(310, 80);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(24, 16);
@@ -67,6 +67,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.BurlyWood;
             this.label2.Location = new System.Drawing.Point(310, 120);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 16);
@@ -76,6 +77,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.BurlyWood;
             this.label3.Location = new System.Drawing.Point(310, 155);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 16);
@@ -103,15 +105,6 @@
             this.txtTelefon.Size = new System.Drawing.Size(100, 22);
             this.txtTelefon.TabIndex = 16;
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Location = new System.Drawing.Point(24, 35);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(16, 52);
-            this.groupBox1.TabIndex = 17;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
-            // 
             // btnUyeKaydet
             // 
             this.btnUyeKaydet.Location = new System.Drawing.Point(555, 60);
@@ -125,6 +118,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.BurlyWood;
             this.label4.Location = new System.Drawing.Point(307, 186);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(50, 16);
@@ -145,9 +139,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(-1, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(-4, -7);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(308, 455);
+            this.pictureBox1.Size = new System.Drawing.Size(810, 462);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
@@ -189,7 +183,6 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnUyeGuncelle);
             this.Controls.Add(this.btnUyeSil);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtSoyad);
             this.Controls.Add(this.label1);
@@ -199,9 +192,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtTelefon);
             this.Controls.Add(this.dgvUyeler);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtAd);
             this.Controls.Add(this.txtEposta);
+            this.Controls.Add(this.pictureBox1);
             this.Name = "UyeForm";
             this.Text = "UyeForm";
             this.Load += new System.EventHandler(this.UyeForm_Load);
@@ -221,7 +214,6 @@
         private System.Windows.Forms.TextBox txtSoyad;
         private System.Windows.Forms.TextBox txtEposta;
         private System.Windows.Forms.TextBox txtTelefon;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnUyeKaydet;
         private System.Windows.Forms.DataGridView dgvUyeler;

@@ -155,9 +155,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(-3, -7);
+            this.pictureBox1.Location = new System.Drawing.Point(-3, -26);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(309, 457);
+            this.pictureBox1.Size = new System.Drawing.Size(828, 496);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
@@ -195,12 +195,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Cornsilk;
-            this.ClientSize = new System.Drawing.Size(807, 461);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(807, 445);
             this.Controls.Add(this.btnKitapGuncelle);
             this.Controls.Add(this.btnKitapSil);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.numBasimYili);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -213,6 +212,7 @@
             this.Controls.Add(this.txtKitapAd);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtYazar);
+            this.Controls.Add(this.pictureBox1);
             this.Name = "KitapForm";
             this.Text = "KitapForm";
             this.Load += new System.EventHandler(this.KitapForm_Load);
