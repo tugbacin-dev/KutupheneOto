@@ -1,4 +1,5 @@
 ﻿using KutupheneOto.DAO;
+using KutupheneOto.Services;
 using MySql.Data.MySqlClient;
 using System;
 using System.Windows.Forms;
@@ -7,6 +8,7 @@ namespace KutupheneOto.UI
 {
     public partial class GirisForm : Form
     {
+        KitapService _kitapServis = new KitapService();
         public GirisForm()
         {
             InitializeComponent();
@@ -57,6 +59,11 @@ namespace KutupheneOto.UI
         {
             base.OnFormClosing(e);
             Application.Exit();
+        }
+
+        private void GirisForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

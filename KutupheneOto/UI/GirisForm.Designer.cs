@@ -110,6 +110,7 @@
             this.ForeColor = System.Drawing.Color.Transparent;
             this.Name = "GirisForm";
             this.Text = "GirisForm";
+            this.Load += new System.EventHandler(this.GirisForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
