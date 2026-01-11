@@ -25,10 +25,12 @@ namespace KutupheneOto.UI
             if (kullaniciYetki == "Y")
             {
                 this.Text = "Kütüphane Otomasyonu - Personel Paneli";
+                rAPORLARToolStripMenuItem.Visible = false;
             }
             else
             {
                 this.Text = "Kütüphane Otomasyonu - Yönetici Paneli";
+                rAPORLARToolStripMenuItem.Visible = true; 
             }
         }
 
