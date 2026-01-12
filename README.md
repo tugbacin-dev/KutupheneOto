@@ -133,6 +133,8 @@ Herhangi bir sorunuz veya öneriniz varsa lütfen benimle iletişime geçin:
 
 ## ▶𝚈𝚘𝚞𝚝𝚞𝚋𝚎 Video
 
+https://youtu.be/p3lXuB0gb9g?si=pTlUxhHP5ucRzRsZ
+
 
 
 
