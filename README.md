@@ -52,7 +52,8 @@ Bu kontrol sonucunda, kullanıcının **Yönetici (A)** mi yoksa **Personel (Y)*
 ---
 
 ## 📚 Kitap Envanter Yönetimi
-![Kitap İşlemleri](https://github.com/user-attachments/assets/8d46c597-34eb-4866-b5e6-a084671c1fa3)
+![Kitap İşlemleri](https://github.com/user-attachments/assets/3ce135ac-9dfa-4e84-86aa-8f3ca8007693)
+
 
 Kitap İşlemleri, kütüphanede bulunan tüm kitapların envanter durumunu (stokta, ödünçte, kayıp) görselleştiren ve bu verileri hızlıca yönetmeni sağlayan bir ekrandır. Bu ekran; kitap adlarını, yazarları ve güncel stok bilgilerini düzenli bir tablo yapısıyla sunar. Personel, bu panel üzerinden kitapların durumunu kolayca takip edebilir ve yeni kayıtlar oluşturabilir.
 
@@ -60,10 +61,78 @@ Kitap İşlemleri, kütüphanede bulunan tüm kitapların envanter durumunu (sto
 
 ## 👥 Üye İşlemleri
 
-![Üye İşlemleri](https://github.com/user-attachments/assets/cb47b011-1533-4836-ab1c-cace4c50f4a8)
-)
+![Üye İşlemleri](https://github.com/user-attachments/assets/74e531a8-a7a5-447b-aff6-e5db4ca27121)
+
 
 **Üye İşlemleri**, kütüphaneye kayıtlı tüm okuyucuların bilgilerini ve üyelik durumlarını merkezi bir yapıda yönetmenizi sağlayan ekrandır. Bu ekran; üye bilgilerini, iletişim detaylarını ve üyelik geçmişini düzenli bir tablo yapısıyla sunar. Personel, bu panel üzerinden yeni üye kayıtlarını kolayca oluşturabilir, mevcut bilgileri güncelleyebilir ve hangi üyenin aktif olduğunu hızlıca takip edebilir.
+
+---
+
+## 📚 Ödünç İşlemleri Modülü
+
+![Ödünç İşlemleri](https://github.com/user-attachments/assets/05a58ecb-a293-4f72-bb4d-38e806d3b1cb)
+
+
+**Ödünç İşlemleri ekranı**, kayıtlı üyelerin kütüphanedeki kitapları ödünç alma süreçlerinin yönetildiği ve takip edildiği bir modüldür. Bu ekran üzerinden kitap ve üye eşleştirmesi yapılarak konaklama/ödünç süreleri belirlenir ve işlem sonrası veritabanındaki durum bilgileri otomatik olarak güncellenir. Yapılan tüm kayıtlar, iade tarihleri ve güncel durumlarıyla birlikte anlık olarak liste üzerinden izlenebilir.
+
+---
+
+## 📚 🔄 İade İşlemleri Modülü
+
+![İade_İşlemleri](https://github.com/user-attachments/assets/e7ec3131-57a5-4df1-a6e1-ab9ec4de54db)
+
+**İade İşlemleri ekranı**, üyelerin ödünç aldığı kitapları geri teslim etme süreçlerini yöneten modüldür. Kullanıcı, üye ve kitap bilgilerini girerek iade işlemini gerçekleştirir; bu işlem sonucunda veritabanındaki kayıtlar güncellenerek kitabın kütüphaneye geri döndüğü anlık olarak sisteme yansıtılır.
+
+---
+
+## 📊 Raporlama ve İstatistik Modülü
+
+![Raporlama_Modülü](https://github.com/user-attachments/assets/b10ccbf7-b8c1-4dbe-a6f7-b11825b0d620)
+
+Raporlar ekranı, kütüphanedeki hareketliliği genel hatlarıyla izlemeyi sağlayan bir özet panelidir. Bu sayfa sayesinde en çok tercih edilen kitaplar ve en aktif üyeler gibi istatistikler tek bir ekrandan kolayca takip edilebilir. Ayrıca iadesi yaklaşan veya geciken kitapların takibi yapılarak sistemin güncel durumu kontrol altında tutulur.
+
+---
+## 🚀 Kurulum ve Kullanım
+
+**Projeyi İndirin:** Kaynak kodları bilgisayarınıza indirin ve Visual Studio ile açın.
+
+**Veritabanı Ayarı:** DatabaseHelper.cs dosyası içerisinden sisteminize uygun bağlantı bilgilerini tanımlayın.
+
+**Çalıştırın:** Uygulamayı başlatın; üye, kitap ve ödünç işlemlerini menülerden yönetmeye başlayın.
+
+**Raporları İzleyin:** Kütüphane genel istatistiklerini raporlar ekranından görüntüleyin
+
+## 🛠️ Proje Yapısı
+
+DAO (Data Access Object): Veritabanı bağlantı ayarları ve temel SQL sorgularının yönetildiği katman.
+
+Domain: Projede kullanılan nesne modellerinin (Üye, Kitap vb.) tanımlandığı bölüm.
+
+Services: İş mantığının yürütüldüğü ve verilerin işlendiği servis katmanı.
+
+UI (User Interface): Kullanıcı etkileşimini sağlayan Windows Forms (AnaForm, OduncForm, IadeForm vb.) arayüzleri
+
+## ✨ Proje Hedefleri
+
+**Kütüphane Süreçlerini Dijitalleştirmek:** Kitap ödünç verme ve iade süreçlerini dijital ortama taşıyarak iş akışını hızlandırmak.
+
+**Kullanıcı Dostu Yönetim:** Karmaşık veritabanı işlemlerini sade bir arayüz üzerinden kolayca yönetebilmek.
+
+**Veriye Dayalı Analiz:** Üye ve kitap hareketlerini raporlayarak kütüphane istatistiklerini anlık olarak takip etmek.
+
+## 📞 İletişim
+
+Herhangi bir sorunuz veya öneriniz varsa lütfen benimle iletişime geçin:
+
+**Ad:** Tuğba
+**Soyad:** Cin
+**Tel No:** +90 552 845 39 48
+**E-posta:** tugbbacin@gmail.com
+
+---
+
+## ▶𝚈𝚘𝚞𝚝𝚞𝚋𝚎 Video
+
 
 
 
